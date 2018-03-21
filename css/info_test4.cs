@@ -30,16 +30,18 @@ Demo Styles: NOT REQUIRED
 }
 
 .text__first-bg{
-  background-color: #5fbff9;
+  background-color: #3883d8;
 }
 
 .text__second-bg{
-  background-color: #f06543;
+  background-color: #eaea20;
 }
 
 .text__second{
   margin-left: 15vmin;
 }
+
+
 
 
 html,
@@ -73,52 +75,28 @@ p, div, ul, li, tr, th, td
 }
 
 
-.text-about-me{
-    opacity: 0;
-}
-.text-compsci-drexel{
-    opacity: 0;
-}
-.text-tracks{
-    opacity: 0;
-}
-.text-tracks-content{
-    opacity: 0;
-}
-.text-minor{
-    opacity: 0;
-}
-.text-minor-content{
-    opacity: 0;
-}
+.text-invisible, .text-about-me, .text-compsci-drexel, .text-tracks, .text-tracks-content,
+.text-minor, .text-minor-content, .text-technical, .text-languages, .text-languages-proficient, .text-languages-limited,
+.text-software, .text-software-content, .text-certifications, .text-certifications-content,
+.text-employment, .text-employment-current, .text-osisoft, .text-osisoft-details, .text-osisoft-content,
+.text-employment-previous, .text-chop, .text-chop-details, .text-chop-content, .text-zpub, .text-zpub-details,
+.text-zpub-content
 
-.text-technical{
-    opacity: 0;
-}
-.text-languages{
-    opacity: 0;
-}
-.text-languages-proficient{
-    opacity: 0;
-}
-.text-languages-limited{
-    opacity: 0;
-}
-.text-software{
-    opacity: 0;
-}
-.text-software-content{
-    opacity: 0;
-}
-.text-certifications{
-    opacity: 0;
-}
-.text-certifications-content{
-    opacity: 0;
+{
+  opacity: 0;
 }
 
 
 
+
+
+.horizontal-spacer
+{
+  width: 25%;
+}
+.same-line-content{
+    display: inline-block;
+}
 
 .center-horizontal
 {
@@ -178,6 +156,9 @@ section {
 
 .screen-technical {
   height: 175%; /* makes panels the entire window height */
+}
+.screen-employment{
+  height: 200%;
 }
 
 
