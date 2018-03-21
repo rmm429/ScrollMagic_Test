@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ScrollMagic Test</title>
+
+    <style>
+
+      html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
+
+      #container {
+        margin: 55vh 0;
+        padding: 50px;
+        outline: 1px dashed orange;
+      }
+
+      #block {
+        padding: 10px;
+        border: 1px solid black;
+        font-family: Helvetica;
+      }
+
+    </style>
+
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/jquery.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/greensock-js/src/minified/TweenMax.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+
+</head>
+
+<body>
+
+  <div id="container">
+
+    <div id="block">
+        Hi there !
+    </div>
+
+  </div>
+
+    <script>
+
+      $(function() {
+
+        /*
+        First we create a variable called containerScene to hold our Scene
+        There we create a ScrollMagic.Scene object
+        triggerElement is the selector that matches a DOM element, here our container with orange borders dashed.
+        duration option, which is set to 500, means that our Scene now lasts for 500 pixels of scroll. It's going to enable us to have our Pin stop at some point, or it'd just stay fixed forever...
+        Then, we don't use the setTween method (because we don't want any Tween there) but the setPin method, which takes a selector as an element : the selector of the block we want to have fixed.
+        We add the indicators for clarity, we of course add the Scene to the Controller or nothing would happen.
+        */
+
+        var controller = new ScrollMagic.Controller();
+
+        var containerScene = new ScrollMagic.Scene({
+          triggerElement: '#container',
+          duration: 500
+        })
+        .setPin('#block')
+        .addIndicators()
+        .addTo(controller);
+
+      });
+
+    </script>
+
+</body>
+</html>

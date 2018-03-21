@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ScrollMagic Test</title>
+
+    <style>
+
+      html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
+
+      #container {
+        margin: 55vh 0;
+        padding: 50px;
+        outline: 1px dashed orange;
+      }
+
+      #block {
+        padding: 10px;
+        border: 1px solid black;
+        font-family: Helvetica;
+      }
+
+    </style>
+
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/jquery.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/greensock-js/src/minified/TweenMax.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+
+</head>
+
+<body>
+
+  <div id="container">
+
+    <div id="block">
+        Hi there !
+    </div>
+
+  </div>
+
+    <script>
+
+      $(function() {
+
+        var controller = new ScrollMagic.Controller();
+
+        /*
+        First we create a variable called blockTween, in which we store our Tween so we can reference it later
+        We Create a new TweenMax.to object. That's how we define our Tween, our transition if you prefer
+        '#block' is the selector that matches the element we want to set a Tween on. It's the "Hi there !" with the black border onr our example page
+        Then comes 1.5 that's the duration of our animation, in seconds, so here's it'll play for a second and a half
+        Then we define the new styles we want our element to have when the transition ends, here we want the background-color to become red
+        */
+        var blockTween = new TweenMax.to('#block', 1.5, {
+          backgroundColor: 'red'
+        });
+
+        /*
+        First we create a variable called containerScene to hold our Scene
+        There we create a ScrollMagic.Scene object
+        triggerElement is the selector that matches a DOM element, here our container with orange borders dashed.
+        We use setTween to bind the Tween we created earlier, using the variable we'd created to bind Tween and Scene together
+        We addIndicators() for some debug visual help
+        We addTo the Controller using the controllervariable we created earlier
+        */
+        var containerScene = new ScrollMagic.Scene({
+          triggerElement: '#container'
+        })
+        .setTween(blockTween)
+        .addIndicators()
+        .addTo(controller);
+
+        if (window.console) console.log('foo');
+
+      });
+
+    </script>
+
+</body>
+</html>

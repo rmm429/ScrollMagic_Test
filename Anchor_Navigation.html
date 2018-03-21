@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ScrollMagic Test</title>
+
+    <style>
+
+      /*
+      Demo Styles: NOT REQUIRED
+      */
+      html,
+      body {
+        margin: 0;
+        height: 100%
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+      a.active {
+        color: #000;
+        text-decoration: underline;
+      }
+
+      h1,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+      }
+
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #EFEFEF;
+      }
+
+      .full-screen {
+        height: 100%; /* makes panels the entire window height */
+      }
+
+      .blue {
+        background-color: #3883d8;
+      }
+      .red {
+        background-color: #cf3535;
+      }
+      .orange {
+        background-color: #ea6300;
+      }
+
+    </style>
+
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/jquery.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/greensock-js/src/minified/TweenMax.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+    <script src="/Users/Ricky/Documents/Scrollmagic/Test/js/greensock-js/src/minified/plugins/ScrollToPlugin.min.js"></script>
+
+</head>
+
+<body>
+
+  <header role="banner">
+
+    <nav class="anchor-nav" role="navigation">
+      <a href="#intro" id="intro-anchor">Intro</a>
+      <a href="#section-1" id="anchor1">Section 1</a>
+      <a href="#section-2" id="anchor2">Section 2</a>
+      <a href="#section-3" id="anchor3">Section 3</a>
+    </nav>
+
+  </header>
+
+  <main class="full-screen" id="intro" role="main">
+
+    <section class="full-screen blue" id="start">
+      <h1>Anchor Navigation</h1>
+    </section>
+
+    <section class="full-screen orange" id="section-1">
+      <div>
+        <p>Section Uno</p>
+      </div>
+    </section>
+
+    <section class="full-screen red" id="section-2">
+      <div>
+        <p>Section Dos</p>
+      </div>
+    </section>
+
+    <section class="full-screen blue" id="section-3">
+      <div>
+        <p>Section Tres</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+
+    $(function() {
+
+      // Init controller
+      var controller = new ScrollMagic.Controller({
+        globalSceneOptions: {
+          duration: $('section').height(),
+          triggerHook: .025,
+          reverse: true
+        }
+      });
+
+      //object to hold href values of links inside our nav with
+      //the class '.anchor-nav'
+
+      scene_object = {
+        '[scene-name]' : {
+          '[target-scene-id]' : '[anchor-href-value]'
+        }
+      }
+
+      var scenes = {
+        'intro': {
+          'intro': 'intro-anchor'
+        },
+        'scene2': {
+          'section-1': 'anchor1'
+        },
+        'scene3': {
+          'section-2': 'anchor2'
+        },
+        'scene4': {
+          'section-3': 'anchor3'
+        }
+      }
+
+      for(var key in scenes) {
+        // skip loop if the property is from prototype
+        if (!scenes.hasOwnProperty(key)) continue;
+
+        var obj = scenes[key];
+
+        for (var prop in obj) {
+          // skip loop if the property is from prototype
+          if(!obj.hasOwnProperty(prop)) continue;
+
+          new ScrollMagic.Scene({ triggerElement: '#' + prop })
+              .setClassToggle('#' + obj[prop], 'active')
+              .addTo(controller);
+        }
+      }
+
+
+      // Change behaviour of controller
+      // to animate scroll instead of jump
+      controller.scrollTo(function(target) {
+
+        TweenMax.to(window, 0.5, {
+          scrollTo : {
+            y : target,
+            autoKill : true // Allow scroll position to change outside itself
+          },
+          ease : Cubic.easeInOut
+        });
+
+      });
+
+
+      //  Bind scroll to anchor links using Vanilla JavaScript
+      var anchor_nav = document.querySelector('.anchor-nav');
+
+      anchor_nav.addEventListener('click', function(e) {
+        var target = e.target,
+            id     = target.getAttribute('href');
+
+        if(id !== null) {
+          if(id.length > 0) {
+            e.preventDefault();
+            controller.scrollTo(id);
+
+            if(window.history && window.history.pushState) {
+              history.pushState("", document.title, id);
+            }
+          }
+        }
+      });
+
+
+
+      //Bind scroll to anchor links using jQuery
+
+      $(document).on("click", "a[href^=#]", function(e) {
+        var id = $(this).attr("href");
+
+        if($(id).length > 0) {
+          e.preventDefault();
+
+          // trigger scroll
+          controller.scrollTo(id);
+
+          // If supported by the browser we can also update the URL
+          if (window.history && window.history.pushState) {
+            history.pushState("", document.title, id);
+          }
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
