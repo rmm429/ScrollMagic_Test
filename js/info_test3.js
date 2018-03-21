@@ -1,43 +1,49 @@
 $(function() {
 
-  // init ScrollMagic Controller
-  var controller = new ScrollMagic.Controller();
-
-
-  var tween = TweenMax.to('#pin', 2, {
-          backgroundColor: 'red',
-          color: 'white'
-      });
-
-      var tween2 = TweenMax.to('.inside2', 2, {
-      transform: 'scale(1.25)',
-      ease: Linear.easeNone
-    });
+  /*
+  var tl = new TimelineMax()
+    .add(TweenMax.to('#largeText', 2, {
+        transform: 'scale(1.05)',
+      }));
 
   var scene = new ScrollMagic.Scene({
             triggerElement: '#scene',
-            duration: 200
+            duration: 500
         })
         .setPin('#pin')
-        .setTween(tween2)
+        .setTween(tl)
         .addTo(controller)
         .addIndicators();
 
-
-
-
-  var tween3 = TweenMax.to('#tween', 0.5, {
-        backgroundColor: 'red',
-        color: 'white'
-    });
+  var tl2 = new TimelineMax()
+    .add(TweenMax.to('#largeText2', 2, {
+        transform: 'scale(1.05)',
+      }));
 
   var scene2 = new ScrollMagic.Scene({
             triggerElement: '#scene2',
-            duration: 300
+            duration: 500
         })
-        .setPin('#scene2')
-        .setTween(tween3)
+        .setPin('#pin2')
+        .setTween(tl2)
         .addTo(controller)
         .addIndicators();
+        */
+
+
+
+  // Scene Handler
+var scene = new ScrollMagic.Scene({
+  triggerElement: "#pinned-trigger1", // point of execution
+  duration: $(window).height() - 100, // pin element for the window height - 1
+  triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
+  reverse: true // allows the effect to trigger when scrolled in the reverse direction
+})
+.setPin("#pinned-element1"); // the element we want to pin
+
+  controller.addScene([
+    scene-about-me,
+    scene
+  ]);
 
 });

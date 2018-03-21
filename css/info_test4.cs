@@ -1,6 +1,47 @@
 /*
 Demo Styles: NOT REQUIRED
 */
+
+
+.text{
+  display: inline-block;
+  font-size: 15vmin;
+  line-height: 1.205;
+}
+
+.text__first, .text__second{
+  position: relative;
+}
+
+.text__word{
+  opacity: 0;
+}
+
+.text__first-bg, .text__second-bg{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.text__first-bg{
+  background-color: #5fbff9;
+}
+
+.text__second-bg{
+  background-color: #f06543;
+}
+
+.text__second{
+  margin-left: 15vmin;
+}
+
+
 html,
 body {
   margin: 0;
@@ -31,9 +72,71 @@ p, div, ul, li, tr, th, td
     color: black;
 }
 
+
+.text-about-me{
+    opacity: 0;
+}
+.text-compsci-drexel{
+    opacity: 0;
+}
+.text-tracks{
+    opacity: 0;
+}
+.text-tracks-content{
+    opacity: 0;
+}
+.text-minor{
+    opacity: 0;
+}
+.text-minor-content{
+    opacity: 0;
+}
+
+.text-technical{
+    opacity: 0;
+}
+.text-languages{
+    opacity: 0;
+}
+.text-languages-proficient{
+    opacity: 0;
+}
+.text-languages-limited{
+    opacity: 0;
+}
+.text-software{
+    opacity: 0;
+}
+.text-software-content{
+    opacity: 0;
+}
+.text-certifications{
+    opacity: 0;
+}
+.text-certifications-content{
+    opacity: 0;
+}
+
+
+
+
 .center-horizontal
 {
     text-align: center;
+}
+
+.center {
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.center-vertical
+{
+  height: 10em;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -69,8 +172,17 @@ section {
   color: #EFEFEF;
 }
 
-.full-screen {
-  height: 100%; /* makes panels the entire window height */
+.screen-about-me {
+  height: 150%; /* makes panels the entire window height */
+}
+
+.screen-technical {
+  height: 175%; /* makes panels the entire window height */
+}
+
+
+.half-screen{
+  height: 50%;
 }
 
 .margin-top-div
@@ -94,6 +206,9 @@ section {
 }
 .gold {
   background-color: #eaea20;
+}
+.white {
+  background-color: white;
 }
 
 
