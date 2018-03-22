@@ -1,5 +1,7 @@
 $(function() {
 
+  $("html").niceScroll();
+
   var tl = new TimelineLite({delay: 1}),
     firstBg = document.querySelectorAll('.text__first-bg'),
     secBg = document.querySelectorAll('.text__second-bg'),
