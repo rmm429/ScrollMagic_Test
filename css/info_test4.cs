@@ -151,7 +151,7 @@ section {
 }
 
 .screen-about-me {
-  height: 500%; /* makes panels the entire window height */
+  height: 150%; /* makes panels the entire window height */
 }
 
 .screen-technical {
