@@ -101,6 +101,7 @@ p, div, ul, li, tr, th, td
 .center-horizontal
 {
     text-align: center;
+    padding: 1px;
 }
 
 .center {
@@ -151,14 +152,14 @@ section {
 }
 
 .screen-about-me {
-  height: 150vh; /* makes panels the entire window height */
+  height: 100em; /* makes panels the entire window height */
 }
 
 .screen-technical {
-  height: 175vh; /* makes panels the entire window height */
+  height: 105em; /* makes panels the entire window height */
 }
 .screen-employment{
-  height: 200vh;
+  height: 125em;
 }
 
 
