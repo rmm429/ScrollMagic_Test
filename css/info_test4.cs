@@ -151,14 +151,14 @@ section {
 }
 
 .screen-about-me {
-  height: 150vh; /* makes panels the entire window height */
+  height: 500%; /* makes panels the entire window height */
 }
 
 .screen-technical {
-  height: 175vh; /* makes panels the entire window height */
+  height: 175%; /* makes panels the entire window height */
 }
 .screen-employment{
-  height: 200vh;
+  height: 200%;
 }
 
 
