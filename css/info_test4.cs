@@ -84,9 +84,53 @@ p, div, ul, li, tr, th, td
 
 {
   opacity: 0;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.outer-compsci-drexel, .outer-tracks, .outer-minor
+{
+  opacity: 0;
+  background-color: black;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 0 10px 0;
+  display: inline-block;
+
+}
+
+.inner-compsci-drexel, .inner-tracks, .inner-minor
+{
+  opacity: 0;
+  background-color: white;
+  margin: 0 10px 0 10px;
+  padding: 10px;
+  display: inline-block;
 }
 
 
+
+.div-content-outer{
+
+  background-color: black;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 0 10px 0;
+  display: inline-block;
+
+}
+
+.div-content-inner{
+
+  background-color: white;
+  margin: 0 10px 0 10px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.side-by-side{
+
+  display: inline-block;
+
+}
 
 
 
@@ -104,11 +148,19 @@ p, div, ul, li, tr, th, td
     padding: 1px;
 }
 
-.center {
+.center-title {
   height: 10em;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+}
+
+.center
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .center-vertical
@@ -175,6 +227,11 @@ section {
 .margin-div
 {
   margin: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: visible;
+  justify-content: flex-start;
 }
 
 .blue {

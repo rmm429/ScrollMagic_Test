@@ -23,14 +23,27 @@ $(function() {
   var minor = document.querySelectorAll(".text-minor");
   var minorContent = document.querySelectorAll(".text-minor-content");
 
+  var outerCompsciDrexel = document.querySelectorAll(".outer-compsci-drexel");
+  var innerCompsciDrexel = document.querySelectorAll(".inner-compsci-drexel");
+  var outerTracks = document.querySelectorAll(".outer-tracks");
+  var innerTracks = document.querySelectorAll(".inner-tracks");
+  var outerMinor = document.querySelectorAll(".outer-minor");
+  var innerMinor = document.querySelectorAll(".inner-minor");
+
   var tlAboutMe = new TimelineMax()
   .to(aboutMe, 1, {opacity:1}, "-=0.1")
   .add(TweenMax.to('#large-text-about-me', 0.5, {
-      transform: 'scale(1.5)'
+      transform: 'scale(2)'
     }))
+  .to(outerCompsciDrexel, 1, {opacity:1}, "-=0.1")
+  .to(innerCompsciDrexel, 1, {opacity:1}, "-=0.1")
   .to(compsciDrexel, 1, {opacity:1}, "-=0.1")
+  .to(outerTracks, 1, {opacity:1}, "-=0.1")
+  .to(innerTracks, 1, {opacity:1}, "-=0.1")
   .to(tracks, 1, {opacity:1}, "-=0.1")
   .to(tracksContent, 1, {opacity:1}, "-=0.1")
+  .to(outerMinor, 1, {opacity:1}, "-=0.1")
+  .to(innerMinor, 1, {opacity:1}, "-=0.1")
   .to(minor, 1, {opacity:1}, "-=0.1")
   .to(minorContent, 1, {opacity:1}, "-=0.1");
 
@@ -60,7 +73,7 @@ $(function() {
   var tlTechnical = new TimelineMax()
   .to(technical, 1, {opacity:1}, "-=0.1")
   .add(TweenMax.to('#large-text-technical', 0.5, {
-      transform: 'scale(1.5)'
+      transform: 'scale(2)'
     }))
   .to(languages, 1, {opacity:1}, "-=0.1")
   .to(languagesProficient, 1, {opacity:1}, "-=0.1")
@@ -102,7 +115,7 @@ $(function() {
   var tlEmployment = new TimelineMax()
   .to(employment, 1, {opacity:1}, "-=0.1")
   .add(TweenMax.to('#large-text-employment', 0.5, {
-      transform: 'scale(1.5)'
+      transform: 'scale(2)'
     }))
   .to(employmentCurrent, 1, {opacity:1}, "-=0.1")
   .to(osisoft, 1, {opacity:1}, "-=0.1")
