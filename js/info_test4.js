@@ -64,22 +64,40 @@ $(function() {
   var technical = document.querySelectorAll(".text-technical");
   var languages = document.querySelectorAll(".text-languages");
   var languagesProficient = document.querySelectorAll(".text-languages-proficient");
+  var languagesProficientContent = document.querySelectorAll(".text-languages-proficient-content");
   var languagesLimited = document.querySelectorAll(".text-languages-limited");
+  var languagesLimitedContent = document.querySelectorAll(".text-languages-limited-content");
   var software = document.querySelectorAll(".text-software");
   var softwareContent = document.querySelectorAll(".text-software-content");
   var certifications = document.querySelectorAll(".text-certifications");
   var certificationsContent = document.querySelectorAll(".text-certifications-content");
+
+  var outerLanguages = document.querySelectorAll(".outer-languages");
+  var innerLanguages = document.querySelectorAll(".inner-languages");
+  var outerSoftware = document.querySelectorAll(".outer-software");
+  var innerSoftware = document.querySelectorAll(".inner-software");
+  var outerCertifications = document.querySelectorAll(".outer-certifications");
+  var innerCertifications = document.querySelectorAll(".inner-certifications");
+
 
   var tlTechnical = new TimelineMax()
   .to(technical, 1, {opacity:1}, "-=0.1")
   .add(TweenMax.to('#large-text-technical', 0.5, {
       transform: 'scale(2)'
     }))
+  .to(outerLanguages, 1, {opacity:1}, "-=0.1")
+  .to(innerLanguages, 1, {opacity:1}, "-=0.1")
   .to(languages, 1, {opacity:1}, "-=0.1")
   .to(languagesProficient, 1, {opacity:1}, "-=0.1")
+  .to(languagesProficientContent, 1, {opacity:1}, "-=0.1")
   .to(languagesLimited, 1, {opacity:1}, "-=0.1")
+  .to(languagesLimitedContent, 1, {opacity:1}, "-=0.1")
+  .to(outerSoftware, 1, {opacity:1}, "-=0.1")
+  .to(innerSoftware, 1, {opacity:1}, "-=0.1")
   .to(software, 1, {opacity:1}, "-=0.1")
   .to(softwareContent, 1, {opacity:1}, "-=0.1")
+  .to(outerCertifications, 1, {opacity:1}, "-=0.1")
+  .to(innerCertifications, 1, {opacity:1}, "-=0.1")
   .to(certifications, 1, {opacity:1}, "-=0.1")
   .to(certificationsContent, 1, {opacity:1}, "-=0.1");
 

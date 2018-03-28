@@ -76,8 +76,8 @@ p, div, ul, li, tr, th, td
 
 
 .text-invisible, .text-about-me, .text-compsci-drexel, .text-tracks, .text-tracks-content,
-.text-minor, .text-minor-content, .text-technical, .text-languages, .text-languages-proficient, .text-languages-limited,
-.text-software, .text-software-content, .text-certifications, .text-certifications-content,
+.text-minor, .text-minor-content, .text-technical, .text-languages, .text-languages-proficient, .text-languages-proficient-content,
+.text-languages-limited, .text-languages-limited-content, .text-software, .text-software-content, .text-certifications, .text-certifications-content,
 .text-employment, .text-employment-current, .text-osisoft, .text-osisoft-details, .text-osisoft-content,
 .text-employment-previous, .text-chop, .text-chop-details, .text-chop-content, .text-zpub, .text-zpub-details,
 .text-zpub-content
@@ -88,7 +88,7 @@ p, div, ul, li, tr, th, td
   justify-content: flex-start;
 }
 
-.outer-compsci-drexel, .outer-tracks, .outer-minor
+.outer-compsci-drexel, .outer-tracks, .outer-minor, .outer-languages, .outer-software, .outer-certifications
 {
   opacity: 0;
   background-color: black;
@@ -98,7 +98,7 @@ p, div, ul, li, tr, th, td
 
 }
 
-.inner-compsci-drexel, .inner-tracks, .inner-minor
+.inner-compsci-drexel, .inner-tracks, .inner-minor, .inner-languages, .inner-software, .inner-certifications
 {
   opacity: 0;
   background-color: white;
