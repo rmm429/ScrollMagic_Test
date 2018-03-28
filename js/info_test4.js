@@ -57,7 +57,6 @@ $(function() {
   })
   .setPin("#about-me-content")
   .setTween(tlAboutMe)
-  .addIndicators(); // the element we want to pin
 
 
 
@@ -110,7 +109,6 @@ $(function() {
   })
   .setPin("#technical-content")
   .setTween(tlTechnical)
-  .addIndicators(); // the element we want to pin
 
 
 
@@ -156,7 +154,6 @@ $(function() {
   })
   .setPin("#employment-content")
   .setTween(tlEmployment)
-  .addIndicators(); // the element we want to pin
 
 
 
